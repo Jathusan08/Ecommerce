@@ -1,0 +1,11 @@
+<div class="cart-area d-n">
+  <a routerLink="/basket-details">
+    <div class="total">
+      {{ totalPrice | currency: "GBP" }}
+      <span>{{ totalQuantity }}</span>
+    </div>
+    <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+  </a>
+</div>
+
+<!-- We'll make use of our router link for cart details, When user clicks BasketStatusComponent then user new route: '/basket-details' to view BasketDetailsComponent-->

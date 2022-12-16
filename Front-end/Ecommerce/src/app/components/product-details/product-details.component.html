@@ -1,0 +1,35 @@
+<div class="detail-section">
+  <div class="container-fluid">
+
+    <br>
+
+    <div *ngIf="!product" class="mt-5 pt-5 mb-5 text-center">
+      <div class="spinner-border" role="status"></div>
+      <p>Product is loading</p>
+    </div>
+
+    <img src="{{ product?.imageURL }}" class="detail-img" />
+
+    <h3>{{ product?.name }}</h3>
+    <div class="price">{{ product?.unitPrice | currency: "GBP" }}</div>
+
+
+<div *ngIf="product.unitsInStock > 0; else elseBlock">
+  <!-- Adding button to add items to baseket-->
+  <button (click)="addToBasket()" class="btn btn-primary btn-sm"> Add to basket </button>
+</div>
+
+<ng-template #elseBlock>
+  <p style="color:red;">SOLD OUT </p>
+</ng-template>
+
+    <!-- client event handler-->
+
+    <hr />
+
+    <h4>Product Description:</h4>
+    <p>{{ product?.description }}</p>
+
+    <a routerLink="/products" class="mt-5">Back to Product List</a>
+  </div>
+</div>

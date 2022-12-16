@@ -1,0 +1,99 @@
+<div class="main-content">
+  <div class="section-content section-content-p30">
+    <div class="container-fluid">
+      <!-- checking our basket array more than 1 meaning we have items-->
+      <div *ngIf="basketItems.length > 0">
+        <table class="table table-bordered">
+          <tbody>
+            <tr>
+              <th width="20%">Product Image</th>
+              <th width="50%">Product Details</th>
+              <th width="30%"></th>
+            </tr>
+
+            <!--loopin through these cart items-->
+            <tr *ngFor="let tempBasketItem of basketItems">
+              <td>
+
+                <!-- setting route link if user wants to check out more details for the product again-->
+                <a routerLink="/products/{{ tempBasketItem.id }}">
+                  <img src="{{ tempBasketItem.imageUrl }}" class="img-responsive"  width="150px" />
+                </a>
+
+              </td>
+
+              <!-- product name and product price-->
+              <td>
+                <p>{{ tempBasketItem.name }}</p>
+                <p>{{ tempBasketItem.price | currency: "GBP" }}</p>
+              </td>
+
+              <td>
+                <div class="items">
+                  <label>Quantity: </label>
+                  <div class="row no-gutters">
+                    <div *ngIf="tempBasketItem.quantity < tempBasketItem.ProductQuantity" class="col">
+                      <button (click)="increaseProductQuantity(tempBasketItem)" class="btn btn-primary btn-sm">
+                        <i class="fas fa-plus"> </i>
+                      </button>
+                    </div>
+
+                    <div class="col ml-4 mr-2"> {{ tempBasketItem.quantity }} </div> <!--Quantity-->
+
+                    <div class="col">
+                      <button (click)="decreaseProductQuantity(tempBasketItem)" class="btn btn-primary btn-sm">
+                        <i class="fas fa-minus"> </i>
+                      </button>
+                    </div>
+
+                    <div class="col-8"></div>
+                  </div>
+                </div>
+
+                <!--Adding remove button-->
+                <button
+                  (click)="removeProduct(tempBasketItem)"
+                  class="btn btn-primary btn-sm mt-2"
+                >
+                  Remove
+                </button>
+
+                <p class="mt-2">
+                  Subtotal:
+                  {{
+                    tempBasketItem.quantity * tempBasketItem.price
+                      | currency: "GBP"
+                  }}
+                </p>
+              </td>
+            </tr>
+
+            <tr>
+              <td colspan="2"></td>
+              <td style="font-weight: bold">
+                <p>Total Quantity: {{ totalQuantity }}</p>
+
+                <p>Shipping: FREE</p>
+
+                <p>Total Price: {{ totalPrice | currency: "GBP" }}</p>
+
+                <!-- adding button-for checkout -->
+                <a routerLink="/checkout" class="btn btn-primary"> Proceed to checkout </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- if cart is empty then let user know your basket is empty-->
+
+      <div
+        *ngIf="basketItems.length == 0"
+        class="alert alert-warning col-md-12"
+        role="alert"
+      >
+        <h1 class="center">Your shopping basket is empty</h1>
+        <img src="https://www.gospeedy.co.in/images/empty.gif" />
+      </div>
+    </div>
+  </div>
+</div>

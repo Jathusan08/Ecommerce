@@ -1,0 +1,93 @@
+<div class="main-content">
+  <div class="section-content section-content-p30">
+    <h3>Category: {{ currentCategoryName }}</h3>
+    <hr />
+
+    <div class="container-fluid">
+      <div class="row">
+        <!-- adding CSS styles from our local style sheet and also some bootstrapped styles-->
+
+        <!-- loop over the collection of products-->
+        <div *ngFor="let tempProduct of products" class="col-md-3">
+          <!-- set up product box where we'll display information-->
+          <div class="product-box">
+            <a routerLink="/products/{{ tempProduct.productId }}">
+              <img src="{{ tempProduct.imageURL }}" class="img-responsive" />
+            </a>
+
+            <a routerLink="/products/{{ tempProduct.productId }}">
+              <h1>{{ tempProduct.name }}</h1>
+            </a>
+
+            <div class="price">
+              {{ tempProduct.unitPrice | currency: "GBP" }}
+            </div>
+
+            <!-- Adding button to add items to baseket-->
+            <div *ngIf="tempProduct.unitsInStock >0; else elseBlock">
+              <button (click)="addToBasket(tempProduct)" class="btn btn-primary btn-sm" > Add to basket </button>
+          </div>
+           
+          <ng-template #elseBlock>
+              <p style="color:red;">SOLD OUT </p>
+          </ng-template>
+          </div>
+        </div>
+
+        <!-- Product not found in the search bar then display a message-->
+
+        <div
+          *ngIf="products?.length == 0"
+          class="alert alert-warning col-md-12"
+          role="alert"
+        >
+          No Products found.
+
+          <!-- 'products?'  '?' is safe navigation opertator(?) one of the Angular feature. This guards against null and undefined values in property paths. In other words, it's a shortcut way of avoiding null point issues -->
+        </div>
+      </div>
+
+      <!--Pagination - begin Footer-->
+      <div class="footer-pagination">
+        <div class="row">
+          <div class="col-md-6"></div>
+
+          <div class="col-md-9">
+            <div class="row">
+              <div class="col-md-9" style="padding-left: 30%">
+                <br />
+                <br />
+
+                <ngb-pagination
+                  [(page)]="pageNumber"
+                  [pageSize]="pageSize"
+                  [collectionSize]="totalElements"
+                  [maxSize]="15"
+                  [boundaryLinks]="true"
+                  (pageChange)="listProducts()"
+                >
+                </ngb-pagination>
+              </div>
+
+              <div class="col-md-3 mt-2" style="text-align: right">
+                <span class="mr-2">Page Size</span>
+
+                <!-- addding DROP Down list-->
+                <select
+                  #customPageSize
+                  (change)="updatePageSize(customPageSize.value)"
+                >
+                  <option selected="true">3</option>
+                  <option>5</option>
+                  <option>15</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--Pagination - end Footer-->
+    </div>
+  </div>
+</div>

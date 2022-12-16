@@ -1,0 +1,19 @@
+<div class="menu-sidebar-content js-scrollbar1">
+  <nav class="navbar-sidebar">
+    <ul class="list-unstyled navbar-list">
+      <!-- Looping thorigh categoy-->
+      <li *ngFor="let tempProductCategories of productCategories">
+        <!--Setup Route Links to pass category id param-->
+        <a
+          routerLink="/category/{{ tempProductCategories.productCategoryId }}/{{
+            tempProductCategories.categoryName
+          }}"
+          routerLinkActive="active-link"
+          style="color: rgb(255, 0, 0)"
+        >
+          {{ tempProductCategories.categoryName }}
+        </a>
+      </li>
+    </ul>
+  </nav>
+</div>
