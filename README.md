@@ -16,3 +16,12 @@ Project Requirements
 -	Add user login/logout security
 -	Track the previous orders for logged in users
 
+Home Page:
+
+<img width="1365" alt="Screenshot 2022-12-16 at 02 11 21" src="https://user-images.githubusercontent.com/36281788/208006380-17843a70-4c92-4546-ab28-e2f908b414a9.png">
+ 
+ Login:
+ <img width="1349" alt="Screenshot 2022-12-16 at 02 11 32" src="https://user-images.githubusercontent.com/36281788/208006444-c9b3ea3c-2c79-4c6d-a80e-92e8f4ed47b2.png">
+
+Order History:
+<img width="1362" alt="Screenshot 2022-12-16 at 02 13 19" src="https://user-images.githubusercontent.com/36281788/208006484-a950c3ad-a3ac-40a4-b56d-621e93d4316a.png">
