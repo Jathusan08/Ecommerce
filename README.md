@@ -1,4 +1,4 @@
-I have buit a real-time e-commerce application and it is full stack application.
+I have built a real-time e-commerce application and it is full stack application.
 
 I have used angular for front-end
 
@@ -10,11 +10,11 @@ For the back end, I have a database setup already that will have full CRUD suppo
 
 Project Requirements
 
--	Show a list of products
--	Add products to shopping card (CRUD)
--	Shopping cart check out
--	Add user login/logout security
--	Track the previous orders for logged in users
+-Show a list of products
+-Search a productView products by a category
+-Add products to shopping cart Shopping cart check out
+-User login/logout 
+- Order History
 
 Home Page:
 
