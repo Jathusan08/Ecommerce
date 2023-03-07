@@ -10,11 +10,16 @@ For the back end, I have a database setup already that will have full CRUD suppo
 
 Project Requirements
 
--Show a list of products
--Search a productView products by a category
--Add products to shopping cart Shopping cart check out
--User login/logout 
-- Order History
+
+•	Show a list of products
+
+•	Search a productView products by a category
+
+•	Add products to shopping cart Shopping cart check out
+
+•	User login/logout 
+ 
+•	Order History
 
 Home Page:
 
