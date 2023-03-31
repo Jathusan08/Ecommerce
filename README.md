@@ -43,4 +43,18 @@ Home Page:
 Order History:
 <img width="1362" alt="Screenshot 2022-12-16 at 02 13 19" src="https://user-images.githubusercontent.com/36281788/208006484-a950c3ad-a3ac-40a4-b56d-621e93d4316a.png">
 
+Product Description:
+<img width="1244" alt="Screenshot 2023-03-31 at 13 53 28" src="https://user-images.githubusercontent.com/36281788/229136674-89276191-e984-4c0b-a00c-44b931f58de5.png">
+
+Shopping Cart:
+<img width="1026" alt="Screenshot 2023-03-31 at 13 53 43" src="https://user-images.githubusercontent.com/36281788/229136907-57875faa-576d-490b-9feb-8bc597e11cc9.png">
+
+Customer & Shipping Details:
+<img width="897" alt="Screenshot 2023-03-31 at 13 54 06" src="https://user-images.githubusercontent.com/36281788/229137887-71df2a05-2168-4f7e-9637-2a8b132848ed.png">
+
+Payment & Final Checkout:
+<img width="851" alt="Screenshot 2023-03-31 at 13 54 26" src="https://user-images.githubusercontent.com/36281788/229137170-b5043ff1-8688-47d9-a3e8-6cf2e8d58cb9.png">
+
+
+
 In order to check each function working as expected, I have tested them using the combination of unit testing and MockMvc with the help of H2 embedded database.
